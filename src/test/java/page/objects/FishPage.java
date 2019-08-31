@@ -20,9 +20,10 @@ public class FishPage {
     @FindBy(css = "#Catalog > table > tbody > tr:nth-child(2) > td:nth-child(1) > a")
     WebElement angelFish;
 
-    public void angelFishLink() {
+    public AngelFish angelFishLink() {
         WaitForElement.waitUntilElementIsClickable(angelFish);
         angelFish.click();
         logger.info("Choose Angel Fish");
+        return new AngelFish();
     }
 }

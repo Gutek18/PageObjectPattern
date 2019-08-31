@@ -12,7 +12,7 @@ import waits.WaitForElement;
 public class AngelFish {
 
     public AngelFish() {
-        PageFactory.initElements(DriverManager.getWebDriver(),this);
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
     private Logger logger = LogManager.getRootLogger();
@@ -20,9 +20,10 @@ public class AngelFish {
     @FindBy(css = "#Catalog > table > tbody > tr:nth-child(3) > td:nth-child(5) > a")
     WebElement addToCartSmallAngelfish;
 
-    public void addingToCartSmallFish(){
+    public ShoppingCart addingToCartSmallFish() {
         WaitForElement.waitUntilElementIsClickable(addToCartSmallAngelfish);
         addToCartSmallAngelfish.click();
         logger.info("Add fish to cart");
+        return new ShoppingCart();
     }
 }

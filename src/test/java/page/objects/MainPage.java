@@ -15,14 +15,36 @@ public class MainPage {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
-    @FindBy(css = "#MainImageContent > map > area:nth-child(2)")
-    private WebElement circularFishButton;
     private Logger logger = LogManager.getRootLogger();
 
-    public void fishButton() {
+    @FindBy(css = "#MainImageContent > map > area:nth-child(2)")
+    private WebElement circularFishButton;
+
+    @FindBy(css = "#MenuContent > a:nth-child(3)")
+    private WebElement signIn;
+
+    @FindBy(css = "#Banner img[src*='dog']")
+    private WebElement bannerAfterLoginLogo;
+
+    public LogInPage signInButton(){
+        WaitForElement.waitUntilElementIsVisible(signIn);
+        signIn.click();
+        logger.info("Clicking SignIn Button");
+        return new LogInPage();
+    }
+
+    public FishPage fishButton() {
         WaitForElement.waitUntilElementIsClickable(circularFishButton);
         circularFishButton.click();
         logger.info("Clicking on fish button");
+        return new FishPage();
+    }
+
+    public boolean isBannerAfterLoginDisplayed(){
+        WaitForElement.waitUntilElementIsVisible(bannerAfterLoginLogo);
+        boolean isDisplayed = bannerAfterLoginLogo.isDisplayed();
+        logger.info("Returning status of banner after login: {}", isDisplayed);
+        return isDisplayed;
     }
 
 }

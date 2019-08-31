@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WaitForElement {
     //metoda która dostarcza nam instancję obiektu WebDriverWait z ustawionym timeout-em na 10 sekund.
     private static WebDriverWait getWebDriverWait() {
-        return new WebDriverWait(DriverManager.getWebDriver(), 10);
+        return new WebDriverWait(DriverManager.getWebDriver(), 5);
     }
 
     //Pierwsza metoda czeka, aż WebElement będzie widoczny w DOM-ie

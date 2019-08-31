@@ -20,9 +20,10 @@ public class WelcomePage {
     @FindBy(css = "#Content > p:nth-child(2) > a")
     private WebElement button;
 
-    public void enterTheStore() {
+    public MainPage enterTheStore() {
         WaitForElement.waitUntilElementIsClickable(button);
         button.click();
         logger.info("Enter the store");
+        return new MainPage();
     }
 }

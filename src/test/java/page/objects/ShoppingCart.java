@@ -19,9 +19,10 @@ public class ShoppingCart {
     @FindBy(css = "#Cart > a")
     WebElement checkoutButton;
 
-    public void proceedToCheckout() {
+    public LogInPage proceedToCheckout() {
         WaitForElement.waitUntilElementIsClickable(checkoutButton);
         checkoutButton.click();
         logger.info("Click on checkout button");
+        return new LogInPage();
     }
 }
