@@ -8,18 +8,21 @@ public class DriverManager {
 
     private DriverManager() {
     }
-
+    private static final BrowserType BROWSER_TYPE = BrowserType.FIREFOX;
     public static WebDriver getWebDriver() {
 
         if (driver == null) {
-            driver = new ChromeDriver();
+            driver = BrowserFactory.getBrowser(BrowserType.CHROME);
+//            driver = BrowserFactory.getBrowser(BrowserType.FIREFOX);
         }
         return driver;
     }
 
-    public static void closedDriver() {
+    public static void disposeDriver() {
         driver.close();
-        driver.quit();
+        if (!BROWSER_TYPE.equals(BrowserType.FIREFOX)){
+            driver.quit();
+        }
         driver = null;
     }
 }

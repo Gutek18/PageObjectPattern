@@ -31,4 +31,5 @@ public class BuyFishTest extends TestBase {
         String pageText = "You must sign on before attempting to check out. Please sign on and try checking out again.";
         assertEquals(logInPage.getLogInText(), pageText);
     }
+
 }

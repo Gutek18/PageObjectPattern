@@ -12,7 +12,7 @@ import waits.WaitForElement;
 public class AngelFish {
 
     public AngelFish() {
-        PageFactory.initElements(DriverManager.getWebDriver(), this);
+                PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
     private Logger logger = LogManager.getRootLogger();
@@ -26,4 +26,5 @@ public class AngelFish {
         logger.info("Add fish to cart");
         return new ShoppingCart();
     }
+
 }

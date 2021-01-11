@@ -6,12 +6,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitForElement {
-    //metoda która dostarcza nam instancję obiektu WebDriverWait z ustawionym timeout-em na 10 sekund.
+    //metoda która dostarcza nam instancję obiektu WebDriverWait z ustawionym timeout-em.
     private static WebDriverWait getWebDriverWait() {
         return new WebDriverWait(DriverManager.getWebDriver(), 5);
     }
 
-    //Pierwsza metoda czeka, aż WebElement będzie widoczny w DOM-ie
+    //Pierwsza metoda czeka, aż WebElement będzie widoczny w DOM-ie.
     public static void waitUntilElementIsVisible(WebElement element) {
         WebDriverWait webDriverWait = getWebDriverWait();
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
